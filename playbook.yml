@@ -36,10 +36,21 @@
         name: 
           - spotify
           - bitwarden
+          - canonical-livepatch
+          - doctl
+            # - lens
+          - teams-for-linux
+          - telegram-desktop
+          - thunderbird
+          - zoom-client
+          - slack
         state: present
-    - name: install VS Code via snap
+    - name: install classic apps via snap
       snap:
-        name: code
+        name: 
+          - code
+          - skype
+          - aws-cli
         classic: yes
     - name: install pip useful packages
       ansible.builtin.pip:
