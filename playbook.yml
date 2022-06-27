@@ -1,0 +1,36 @@
+---
+- name: My Machine
+  hosts: 127.0.0.1
+  connection: local
+  become: true
+  gather_facts: false
+  tasks:
+    - name: Update all packages to their latest version
+      ansible.builtin.apt:
+        name: "*"
+        state: latest
+        autoremove: yes
+        update_cache: yes
+    - name: Upgrade the OS (apt-get dist-upgrade)
+      ansible.builtin.apt:
+        upgrade: dist
+    - name: install apt useful packages
+      ansible.builtin.apt:
+        pkg:
+          - snapd
+          - neovim
+          - terminator
+          - git
+          - firefox
+          - nextcloud-desktop
+          - vagrant
+    - name: install snap useful apps
+      snap:
+        name: 
+          - spotify
+          - bitwarden
+        state: present
+    - name: install VS Code via snap
+      snap:
+        name: code
+        classic: yes
