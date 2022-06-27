@@ -24,6 +24,7 @@
           - firefox
           - nextcloud-desktop
           - vagrant
+          - python3-pip
     - name: install snap useful apps
       snap:
         name: 
@@ -34,3 +35,6 @@
       snap:
         name: code
         classic: yes
+    - name: install pip useful packages
+      ansible.builtin.pip:
+        name: grip
