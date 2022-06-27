@@ -25,6 +25,12 @@
           - nextcloud-desktop
           - vagrant
           - python3-pip
+          - build-essential
+          - dkms
+          - unzip
+          - virtualbox
+            #          - virtualbox-ext-pack
+          - meld
     - name: install snap useful apps
       snap:
         name: 
