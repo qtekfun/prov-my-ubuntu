@@ -9,3 +9,21 @@
         name: core.editor
         scope: global
         value: vim
+
+    - name: Add ci alias to ~/.gitconfig
+      community.general.git_config:
+        name: alias.ci
+        scope: global
+        value: commit
+    
+    - name: Add co alias to ~/.gitconfig
+      community.general.git_config:
+        name: alias.co
+        scope: global
+        value: checkout
+    
+    - name: Add a st alias ~/.gitconfig
+      community.general.git_config:
+        name: alias.st
+        scope: global
+        value: status
