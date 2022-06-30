@@ -4,18 +4,25 @@
   connection: local
   become: true
   gather_facts: false
+
+
+  pre_tasks:
+   - name: Update apt cache if needed.
+     apt: update_cache=yes cache_valid_time=3600
+
   tasks:
     - name: Update all packages to their latest version
-      ansible.builtin.apt:
+      apt:
         name: "*"
         state: latest
         autoremove: yes
-        update_cache: yes
+    
     - name: Upgrade the OS (apt-get dist-upgrade)
-      ansible.builtin.apt:
+      apt:
         upgrade: dist
+    
     - name: install apt useful packages
-      ansible.builtin.apt:
+      apt:
         pkg:
           - snapd
           - neovim
@@ -31,6 +38,7 @@
           - virtualbox
             #          - virtualbox-ext-pack
           - meld
+    
     - name: install snap useful apps
       snap:
         name: 
