@@ -52,6 +52,7 @@
           - thunderbird
           - zoom-client
           - slack
+          - libreoffice
         state: present
     - name: install classic apps via snap
       snap:
