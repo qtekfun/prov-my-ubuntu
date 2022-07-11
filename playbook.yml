@@ -65,3 +65,12 @@
     - name: install pip useful packages
       ansible.builtin.pip:
         name: grip
+
+    - name: Download Calibre
+      get_url:
+        url: https://download.calibre-ebook.com/linux-installer.sh
+        dest: /tmp/linux-installer.sh
+        mode: 0755
+
+    - name: install calibre
+      command: sh /tmp/linux-installer.sh
