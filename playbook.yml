@@ -39,6 +39,7 @@
             #          - virtualbox-ext-pack
           - meld
           - net-tools
+          - keepass2  
     
     - name: install snap useful apps
       snap:
