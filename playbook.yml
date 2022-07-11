@@ -38,6 +38,7 @@
           - virtualbox
             #          - virtualbox-ext-pack
           - meld
+          - net-tools
     
     - name: install snap useful apps
       snap:
