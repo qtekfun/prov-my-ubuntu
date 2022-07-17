@@ -11,6 +11,11 @@
      apt: update_cache=yes cache_valid_time=3600
 
   tasks:
+        
+    - name: add tlp repo
+      ansible.builtin.apt_repository:
+        repo: ppa:linrunner/tlp
+
     - name: Update all packages to their latest version
       apt:
         name: "*"
@@ -39,7 +44,9 @@
             #          - virtualbox-ext-pack
           - meld
           - net-tools
-          - keepass2  
+          - keepass2
+          - tlp
+          - tlp-rdw
     
     - name: install snap useful apps
       snap:
@@ -75,3 +82,4 @@
 
     - name: install calibre
       command: sh /tmp/linux-installer.sh
+
