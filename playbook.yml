@@ -47,6 +47,7 @@
           - keepass2
           - tlp
           - tlp-rdw
+          - gparted
     
     - name: install snap useful apps
       snap:
