@@ -49,6 +49,7 @@
           - tlp-rdw
           - gparted
           - wireguard
+          - lm-sensors
     
     - name: install snap useful apps
       snap:
