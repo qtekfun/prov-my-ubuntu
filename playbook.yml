@@ -48,6 +48,7 @@
           - tlp
           - tlp-rdw
           - gparted
+          - wireguard
     
     - name: install snap useful apps
       snap:
