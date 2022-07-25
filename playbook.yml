@@ -16,6 +16,16 @@
       ansible.builtin.apt_repository:
         repo: ppa:linrunner/tlp
 
+    - name: Add Docker GPG apt Key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker Repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu jammy stable
+        state: present
+
     - name: Update all packages to their latest version
       apt:
         name: "*"
@@ -50,6 +60,14 @@
           - gparted
           - wireguard
           - lm-sensors
+          - ca-certificates
+          - curl
+          - gnupg
+          - lsb-release
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - docker-compose-plugin
     
     - name: install snap useful apps
       snap:
@@ -85,4 +103,26 @@
 
     - name: install calibre
       command: sh /tmp/linux-installer.sh
+    
+    - name: Ensure group "docker" exists
+      ansible.builtin.group:
+        name: docker
+        state: present
 
+    - name: Add user to the group docker
+      ansible.builtin.user:
+        name: qtekfun
+        groups: docker
+        append: yes
+
+    - name: enable service docker
+      ansible.builtin.systemd:
+        name: docker
+        enabled: yes
+        state: started
+          
+    - name: enable service containerd
+      ansible.builtin.systemd:
+        name: containerd.service
+        enabled: yes
+        state: started
