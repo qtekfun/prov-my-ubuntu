@@ -1,9 +1,4 @@
 ---
-- name: My Machine
-  hosts: 127.0.0.1
-  connection: local
-  gather_facts: false
-  tasks:
     - name: Add a setting to ~/.gitconfig
       community.general.git_config:
         name: core.editor

@@ -1,0 +1,16 @@
+---
+- name: My Machine
+  hosts: 127.0.0.1
+  connection: local
+  become: true
+  gather_facts: false
+
+
+  pre_tasks:
+   - name: Update apt cache if needed.
+     apt: update_cache=yes cache_valid_time=3600
+
+  roles:
+    - apps
+    - git
+    - ufw

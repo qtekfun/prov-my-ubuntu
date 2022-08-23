@@ -1,17 +1,4 @@
 ---
-- name: My Machine
-  hosts: 127.0.0.1
-  connection: local
-  become: true
-  gather_facts: false
-
-
-  pre_tasks:
-   - name: Update apt cache if needed.
-     apt: update_cache=yes cache_valid_time=3600
-
-  tasks:
-        
     - name: add tlp repo
       ansible.builtin.apt_repository:
         repo: ppa:linrunner/tlp
@@ -68,6 +55,9 @@
           - docker-ce-cli
           - containerd.io
           - docker-compose-plugin
+          - android-sdk-platform-tools
+          - android-sdk-platform-tools-common
+          - dnsutils
     
     - name: install snap useful apps
       snap:
@@ -91,6 +81,7 @@
           - skype
           - aws-cli
         classic: yes
+
     - name: install pip useful packages
       ansible.builtin.pip:
         name: grip
