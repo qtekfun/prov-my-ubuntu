@@ -25,39 +25,8 @@
     
     - name: install apt useful packages
       apt:
-        pkg:
-          - snapd
-          - neovim
-          - terminator
-          - git
-          - firefox
-          - nextcloud-desktop
-          - vagrant
-          - python3-pip
-          - build-essential
-          - dkms
-          - unzip
-          - virtualbox
-            #          - virtualbox-ext-pack
-          - meld
-          - net-tools
-          - keepass2
-          - tlp
-          - tlp-rdw
-          - gparted
-          - wireguard
-          - lm-sensors
-          - ca-certificates
-          - curl
-          - gnupg
-          - lsb-release
-          - docker-ce
-          - docker-ce-cli
-          - containerd.io
-          - docker-compose-plugin
-          - android-sdk-platform-tools
-          - android-sdk-platform-tools-common
-          - dnsutils
+        name: "{{ apt_default_apps }}"
+        state: latest
     
     - name: install snap useful apps
       snap:
