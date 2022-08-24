@@ -35,3 +35,8 @@
     - role: git
       tags:
         - config
+
+    - role: aliases
+      tags:
+        - config
+        - aliases

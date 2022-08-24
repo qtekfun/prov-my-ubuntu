@@ -1,0 +1,6 @@
+---
+bash_aliases_path: "~/.bash_aliases"
+
+bash_aliases: 
+  - { alias: 'ls', command: 'ls --color=auto' }
+  - { alias: 'repo', command: 'cd ~/repo' }
