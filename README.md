@@ -8,3 +8,4 @@ Avaiable tags are:
 * apps
 * config
 * aliases
+* git

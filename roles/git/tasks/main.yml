@@ -1,24 +1,70 @@
 ---
-    - name: Add a setting to ~/.gitconfig
-      community.general.git_config:
-        name: core.editor
-        scope: global
-        value: vim
+### Git aliases
 
-    - name: Add ci alias to ~/.gitconfig
-      community.general.git_config:
-        name: alias.ci
-        scope: global
-        value: commit
-    
-    - name: Add co alias to ~/.gitconfig
-      community.general.git_config:
-        name: alias.co
-        scope: global
-        value: checkout
-    
-    - name: Add a st alias ~/.gitconfig
-      community.general.git_config:
-        name: alias.st
-        scope: global
-        value: status
+- name: Add a setting to ~/.gitconfig
+  community.general.git_config:
+    name: core.editor
+    scope: global
+    value: vim
+
+- name: Add ci alias to ~/.gitconfig
+  community.general.git_config:
+    name: alias.ci
+    scope: global
+    value: commit
+
+- name: Add co alias to ~/.gitconfig
+  community.general.git_config:
+    name: alias.co
+    scope: global
+    value: checkout
+
+- name: Add a st alias ~/.gitconfig
+  community.general.git_config:
+    name: alias.st
+    scope: global
+    value: status
+
+- name: Add lg alias
+  community.general.git_config:
+    name: alias.lg
+    scope: global
+    value: log --graph --branches=local/ HEAD main --oneline
+
+- name: Add lg1 alias
+  community.general.git_config:
+    name: alias.lg1
+    scope: global
+    value: log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white black)%s%C(reset) %C(bold cyan)-- %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative --branches=local/
+
+- name: Add lg2 alias
+  community.general.git_config:
+    name: alias.lg2
+    scope: global
+    value: log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white black)%s%C(reset) %C(bold cyan)-- %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative --branches=local/ HEAD main
+
+- name: Add lg3 alias
+  community.general.git_config:
+    name: alias.lg3
+    scope: global
+    value: log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white black)%s%C(reset) %C(bold cyan)-- %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative --all
+
+- name: Add backup alias
+  community.general.git_config:
+    name: alias.lg1
+    scope: global
+    value: backup = "!f() { git branch $(date \"+backup/%Y/%m/%d/%H%M%S\") \"$@\"; }; f"
+
+### Git configs
+
+- name: Configure editor
+  community.general.git_config:
+    name: core.editor
+    scope: global
+    value: vim
+
+- name: Configure global git ignore
+  community.general.git_config:
+    name: core.excludesFile
+    scope: global
+    value: ~/.gitglobalignore
