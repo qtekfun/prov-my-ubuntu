@@ -9,5 +9,6 @@ bash_aliases:
   - { alias: '..', command: 'cd ..' }
   - { alias: 'h', command: 'history' }
   - { alias: 'j', command: 'jobs -l' }
+  - { alias: 'lg3', command: 'git lg3 -20' }
 
 bash_aliases_lines: false
