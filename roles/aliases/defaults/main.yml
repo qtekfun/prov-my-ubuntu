@@ -8,4 +8,6 @@ bash_aliases:
   - { alias: 'k', command: 'kubectl' }
   - { alias: '..', command: 'cd ..' }
   - { alias: 'h', command: 'history' }
-  - { alias: 'j', command: 'jobs -l' }   
+  - { alias: 'j', command: 'jobs -l' }
+
+bash_aliases_lines: false
