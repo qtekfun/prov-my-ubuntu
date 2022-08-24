@@ -2,5 +2,10 @@
 bash_aliases_path: "~/.bash_aliases"
 
 bash_aliases: 
-  - { alias: 'ls', command: 'ls --color=auto' }
   - { alias: 'repo', command: 'cd ~/repo' }
+  - { alias: 'c', command: 'clear' }
+  - { alias: 'apt-get', command: 'sudo apt-get' }
+  - { alias: 'k', command: 'kubectl' }
+  - { alias: '..', command: 'cd ..' }
+  - { alias: 'h', command: 'history' }
+  - { alias: 'j', command: 'jobs -l' }   
