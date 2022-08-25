@@ -31,4 +31,5 @@ apt_default_apps:
   - android-sdk-platform-tools
   - android-sdk-platform-tools-common
   - dnsutils
+  - imagemagick
 
