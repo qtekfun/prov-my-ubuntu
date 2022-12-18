@@ -10,5 +10,13 @@ bash_aliases:
   - { alias: 'h', command: 'history' }
   - { alias: 'j', command: 'jobs -l' }
   - { alias: 'lg3', command: 'git lg3 -20' }
-
+  - { alias: 'll', command: 'ls -l' }
+  - { alias: 'la', command: 'ls -la' }
+  - { alias: 'grep', command: 'grep --color=auto' }
+  - { alias: '..', command: 'cd ..' }
+  - { alias: '...', command: 'cd ../..'}
+  - { alias: 'up', command: 'docker compose up -d' }
+  - { alias: 'down', command: 'docker compose down' }
+  - { alias: 'update', command: 'sudo apt update && sudo apt upgrade -y' }
+  
 bash_aliases_lines: false
